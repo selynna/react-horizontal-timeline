@@ -22,7 +22,7 @@ export const daydiff = (first, second) => Math.round((second - first));
  * @param {array} rows An array (of size 2) of arrays (of equal size).
  * @return {array} An array (of size of either array in param) of arrays (of size 2)
  */
-export const zip = rows => rows[0].map((_, c) => rows.map(row => row[c]));
+// export const zip = rows => rows[0].map((_, c) => rows.map(row => row[c]));
 
 
 /**
@@ -30,6 +30,7 @@ export const zip = rows => rows[0].map((_, c) => rows.map(row => row[c]));
  * @param {array} dates The array containing all the dates
  * @return {{min: number, max: number}} The minimum and maximum distances
  */
+/*
 export const dateDistanceExtremes = (dates) => {
   // determine the minimum distance among events
   const datePairs = zip([ dates.slice(0, -1), dates.slice(1) ]);
@@ -56,10 +57,12 @@ export const dateDistanceExtremes = (dates) => {
  * @return {array} positioning information for dates from a given origin point
  */
 // the interface for this function is pure
+// 
 export const cummulativeSeperation = (dates, labelWidth, minEventPadding, maxEventPadding, startPadding) => {
   // using dynamic programming to set up the distance from the origin of the timeline.
   const distances = new Array(dates.length);
   distances[0] = startPadding;
+  /*
 
   // Calculating the minimum seperation between events
   const dateExtremes = dateDistanceExtremes(dates);
@@ -76,6 +79,11 @@ export const cummulativeSeperation = (dates, labelWidth, minEventPadding, maxEve
       : Math.round((((distance - dateExtremes.min) * paddingDiff) / datesDiff) + minEventPadding);
     // the distance_from_origin(n) = distance_from_origin(n-1) + distance between n and n - 1.
     distances[index] = distances[index - 1] + labelWidth + seperation;
+  }
+  console.log(distances);
+  */
+  for (var i = 0; i < distances.length; i++) {
+    distances[i] = (i + 1) * 150;
   }
   return distances;
 };

@@ -35,8 +35,12 @@ class HorizontalTimeline extends React.Component {
       return false;
     }
 
+    console.log("values");
+    console.log(this.props.values);
     // Convert the date strings to actual date objects
-    const dates = props.values.map((value) => new Date(value));
+    const dates = props.values.map((value) => [new Date(value[0]), value[1]]);
+    console.log(dates);
+    
     // Calculate the distances for all events
     const distances = cummulativeSeperation(
       dates,
@@ -46,12 +50,15 @@ class HorizontalTimeline extends React.Component {
       props.linePadding,
     );
 
+    console.log("distances");
+    console.log(distances);
     // Convert the distances and dates to events
     const events = distances.map((distance, index) => ({
       distance,
-      label: props.getLabel(props.values[index], index),
-      date: props.values[index],
+      label: props.values[index][1],
+      date: props.values[index][0],
     }));
+    console.log(events);
 
     const visibleWidth = this.props.containerWidth - 80;
 
@@ -99,7 +106,7 @@ HorizontalTimeline.propTypes = {
   // Selected index
   index: PropTypes.number,
   // Array containing the sorted date strings
-  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+  values: PropTypes.arrayOf(PropTypes.object).isRequired,
   // Function that takes the index of the array as argument
   indexClick: PropTypes.func,
   // Function to calculate the label based on the date string
