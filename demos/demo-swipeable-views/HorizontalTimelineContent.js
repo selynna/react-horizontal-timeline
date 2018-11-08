@@ -70,31 +70,6 @@ export default class HorizontalTimelineContent extends React.Component {
 
     return (
       <div>
-        <div style={{ width: '60%', height: '100px', margin: '0 auto' }}>
-          <HorizontalTimeline
-            fillingMotion={{ stiffness: state.fillingMotionStiffness, damping: state.fillingMotionDamping }}
-            index={this.state.value}
-            indexClick={(index) => {
-              this.setState({ value: index, previous: this.state.value });
-            }}
-
-            isKeyboardEnabled={state.isKeyboardEnabled}
-            isTouchEnabled={state.isTouchEnabled}
-            labelWidth={state.labelWidth}
-            linePadding={state.linePadding}
-            maxEventPadding={state.maxEventPadding}
-            minEventPadding={state.minEventPadding}
-            slidingMotion={{ stiffness: state.slidingMotionStiffness, damping: state.slidingMotionDamping }}
-            styles={{
-              background: state.stylesBackground,
-              foreground: state.stylesForeground,
-              outline: state.stylesOutline
-            }}
-            values={ this.dates }
-            isOpenEnding={state.isOpenEnding}
-            isOpenBeginning={state.isOpenBeginning}
-          />
-        </div>
         <div className='text-center'>
           <SwipeableViews
             index={this.state.value}
@@ -117,6 +92,33 @@ export default class HorizontalTimelineContent extends React.Component {
           </label>
         </div>
         { configurator }
+        <div style={{ width: '100vw', display: 'flex', justifyContent: 'center' }} >
+          <div style={{ width: '60%', height: '100px', margin: '0 auto', position: 'absolute', bottom: '0' }}>
+            <HorizontalTimeline
+              fillingMotion={{ stiffness: state.fillingMotionStiffness, damping: state.fillingMotionDamping }}
+              index={this.state.value}
+              indexClick={(index) => {
+                this.setState({ value: index, previous: this.state.value });
+              }}
+
+              isKeyboardEnabled={state.isKeyboardEnabled}
+              isTouchEnabled={state.isTouchEnabled}
+              labelWidth={state.labelWidth}
+              linePadding={state.linePadding}
+              maxEventPadding={state.maxEventPadding}
+              minEventPadding={state.minEventPadding}
+              slidingMotion={{ stiffness: state.slidingMotionStiffness, damping: state.slidingMotionDamping }}
+              styles={{
+                background: state.stylesBackground,
+                foreground: state.stylesForeground,
+                outline: state.stylesOutline
+              }}
+              values={ this.dates }
+              isOpenEnding={state.isOpenEnding}
+              isOpenBeginning={state.isOpenBeginning}
+            />
+            </div>
+        </div>
       </div>
     );
   }

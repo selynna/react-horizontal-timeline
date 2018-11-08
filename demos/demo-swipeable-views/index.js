@@ -36,8 +36,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("dis data");
-    console.log(this.data);
     return (
       <HorizontalTimelineContent
         content={this.data} />

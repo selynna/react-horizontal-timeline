@@ -146,9 +146,9 @@ HorizontalTimeline.defaultProps = {
   labelWidth: Constants.DATE_WIDTH,
   // --- STYLING ---
   styles: {
-    outline: '#dfdfdf',
-    background: '#f8f8f8',
-    foreground: '#7b9d6f'
+    outline: '#123123',
+    background: '#123123',
+    foreground: '#123123'
   },
   fillingMotion: {
     stiffness: 150,
