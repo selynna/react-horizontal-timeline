@@ -11,7 +11,7 @@ const dots = {
    */
   links: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 30,
     textAlign: 'center',
     paddingBottom: 15,
   },

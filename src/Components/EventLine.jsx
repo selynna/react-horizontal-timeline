@@ -20,7 +20,7 @@ const EventLine = ({left, width, fillingMotion, backgroundColor}) => (
       style={{
         position: 'absolute',
         left: `${tLeft}px`,
-        top: 0,
+        bottom: '30px',
         height: '100%',
         width: `${tWidth}px`,
         transformOrigin: 'left center',
