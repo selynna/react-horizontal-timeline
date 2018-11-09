@@ -92,7 +92,7 @@ export default class HorizontalTimelineContent extends React.Component {
           </label>
         </div>
         { configurator }
-        <div style={{ width: '100vw', display: 'flex', justifyContent: 'center' }} >
+        <div style={{ width: '100vw', display: 'flex', justifyContent: 'center', bottom: '0' }} >
           <div style={{ width: '60%', height: '100px', margin: '0 auto', position: 'absolute', bottom: '0' }}>
             <HorizontalTimeline
               fillingMotion={{ stiffness: state.fillingMotionStiffness, damping: state.fillingMotionDamping }}
