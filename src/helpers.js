@@ -80,7 +80,6 @@ export const cummulativeSeperation = (dates, labelWidth, minEventPadding, maxEve
     // the distance_from_origin(n) = distance_from_origin(n-1) + distance between n and n - 1.
     distances[index] = distances[index - 1] + labelWidth + seperation;
   }
-  console.log(distances);
   */
   for (var i = 0; i < distances.length; i++) {
     distances[i] = (i + 1) * 150;
