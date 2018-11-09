@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Events from './Events';
 import EventLine from './EventLine';
-import Faders from './Faders';
 import HorizontalTimelineButtons from './HorizontalTimelineButtons';
 
 import Constants from '../Constants';
@@ -225,7 +224,6 @@ class EventsBar extends React.Component {
             </div>
             }</Motion>
           </div>
-          <Faders styles={this.props.styles}/>
           <HorizontalTimelineButtons
             maxPosition={this.state.maxPosition}
             position={this.state.position}
